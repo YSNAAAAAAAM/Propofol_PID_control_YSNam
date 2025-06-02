@@ -120,7 +120,6 @@ for i in range(1, len(time_points)):
             u = 0.0
         else:
             u = 0.0
-
     elif (BIS_current > 50.0 and t >= 3.0):
         u = 0.2 * wgt
     elif (BIS_current < 50.0 and t >= 3.0):
