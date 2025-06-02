@@ -1,6 +1,6 @@
 # main.py
 # 치과마취의 이해1 과제
-# Yoon-Seo Nam, 2025-05-31
+# Yoon-Seo Nam, 2025-06-02
 
 import numpy as np
 import matplotlib.pyplot as plt
