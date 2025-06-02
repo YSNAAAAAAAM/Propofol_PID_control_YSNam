@@ -10,10 +10,10 @@ import Propofol_PK as pk
 import Propofol_PD as pd
 
 # PharmacoDynamics of propofol
-age = 40      # years
-wgt = 70.0    # kg
+age = 20      # years
+wgt = 90.0    # kg
 hgt = 170.0   # cm
-m1f2 = 2.0    # 1: female, 2: male
+m1f2 = 1.0    #
 pma = 10.5    # weeks
 tech = 1      # 1: arterial
 a1v2 = 1      # 1: arterial
@@ -49,7 +49,7 @@ t_inf_start = 0.0
 t_inf_end = - 10.0
 
 # PID parameters
-Kp = 2.5
+Kp = 2.0
 Ki = 0.2
 Kd = 0.1
 
@@ -118,7 +118,7 @@ for i in range(1, len(time_points)):
     u = max(u, 0.0)
     # u = min(u, 120.0)
 
-    """# conventional method
+    # conventional method
     if (BIS_current > 50.0 and t < 3.0):
 
         if (u == 0.0 and t > t_inf_end + t_interval):
@@ -138,7 +138,7 @@ for i in range(1, len(time_points)):
     elif (BIS_current < 50.0 and t >= 3.0):
         u = 0.1 * wgt
     else:
-        u = 0.0"""
+        u = 0.0
 
     u_values.append(u)
 
