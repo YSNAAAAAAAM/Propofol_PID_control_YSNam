@@ -114,11 +114,11 @@ for i in range(1, len(time_points)):
         u = min(u, wgt * 15.0 / params_pk['V1'])
         u_values.append(u)"""
 
-    """u = Kp * e + Ki * e_integral + Kd * e_derivative
+    u = Kp * e + Ki * e_integral + Kd * e_derivative
     u = max(u, 0.0)
-    # u = min(u, 120.0)"""
+    # u = min(u, 120.0)
 
-    # conventional method
+    """# conventional method
     if (BIS_current > 50.0 and t < 3.0):
         if (u == 0.0 and t > t_inf_end + t_interval):
             t_inf_start = t
@@ -136,7 +136,7 @@ for i in range(1, len(time_points)):
     elif (BIS_current < 50.0 and t >= 3.0):
         u = 0.1 * wgt
     else:
-        u = 0.0
+        u = 0.0"""
 
     u_values.append(u)
 
