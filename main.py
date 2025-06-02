@@ -10,7 +10,7 @@ import Propofol_PK as pk
 import Propofol_PD as pd
 
 # PharmacoDynamics of propofol
-age = 20      # years
+age = 40      # years
 wgt = 90.0    # kg
 hgt = 170.0   # cm
 m1f2 = 1.0    #
@@ -114,18 +114,16 @@ for i in range(1, len(time_points)):
         u = min(u, wgt * 15.0 / params_pk['V1'])
         u_values.append(u)"""
 
-    u = Kp * e + Ki * e_integral + Kd * e_derivative
+    """u = Kp * e + Ki * e_integral + Kd * e_derivative
     u = max(u, 0.0)
-    # u = min(u, 120.0)
+    # u = min(u, 120.0)"""
 
     # conventional method
     if (BIS_current > 50.0 and t < 3.0):
-
         if (u == 0.0 and t > t_inf_end + t_interval):
             t_inf_start = t
             t_inf_end = t_inf_start + t_infusion
             u = 240.0   # 40mg q10sec
-
         if (t < t_inf_end):
             u = 240.0
         elif (t >= t_inf_end and t < t_inf_end + t_interval):
@@ -157,7 +155,7 @@ for i in range(1, len(time_points)):
     q3_next = q3_current + dt / 2.0 * (k1_q3 + k2_q3)
     ce_next = ce_current + dt / 2.0 * (k1_ce + k2_ce)
 
-    """# APID (optional)
+    """# APID (todo)
     # increase Kp, Ki for high e (for fast control)
     # increase Kd for high e_derivative
     Kp += Kp_alpha * e * e_derivative
