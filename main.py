@@ -104,16 +104,6 @@ for i in range(1, len(time_points)):
     e_derivative = (e - e_previous) / dt
     e_previous = e
 
-    """if t > 20.0:
-        u = 0.0
-        u_values.append(u)
-    else:
-        u = Kp * e + Ki * e_integral + Kd * e_derivative
-        u = max(u, 0.0)
-        # u = min(u, 1000.0 / params_pk['V1'])
-        u = min(u, wgt * 15.0 / params_pk['V1'])
-        u_values.append(u)"""
-
     u = Kp * e + Ki * e_integral + Kd * e_derivative
     u = max(u, 0.0)
     # u = min(u, 120.0)
